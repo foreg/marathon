@@ -34,20 +34,22 @@ namespace Marathon
             if (topPanel != null)
             {
                 var panel = TopPanels.Find(p => p.GetType() == topPanel);
-                panel.BringToFront();
                 panel.Init();
+                panel.BringToFront();
             }
             if (centerPanel != null)
             {
                 var panel = CenterPanels.Find(p => p.GetType() == centerPanel);
-                panel.BringToFront();
+                var loadingPanel = CenterPanels.Find(p => p.GetType() == typeof(LoadingPanel));
+                loadingPanel.BringToFront();
                 panel.Init();
+                panel.BringToFront();
             }
             if (bottomPanel != null)
             {
                 var panel = BottomPanels.Find(p => p.GetType() == bottomPanel);
-                panel.BringToFront();
                 panel.Init();
+                panel.BringToFront();
             }
         }
     }

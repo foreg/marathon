@@ -144,13 +144,26 @@
   <ItemGroup>
     <Compile Include="ApplicationContext.cs" />
     <Compile Include="Config.cs" />
+    <Compile Include="CustomElements\CueTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomElements\NumericTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Charity.cs" />
+    <Compile Include="Models\Country.cs" />
+    <Compile Include="Models\Gender.cs" />
+    <Compile Include="Models\RaceKitOption.cs" />
+    <Compile Include="Models\Registration.cs" />
     <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\Runner.cs" />
+    <Compile Include="Models\Sponsorship.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="PanelsManager.cs" />
     <Compile Include="Panels\BaseUserControl.cs">
@@ -162,6 +175,12 @@
     </Compile>
     <Compile Include="Panels\CountDownPanel.Designer.cs">
       <DependentUpon>CountDownPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\LoadingPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\LoadingPanel.Designer.cs">
+      <DependentUpon>LoadingPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Panels\SponsorRunner.cs">
       <SubType>UserControl</SubType>
@@ -181,6 +200,12 @@
     <Compile Include="Panels\TitlePanel.Designer.cs">
       <DependentUpon>TitlePanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopupForms\CharityOrganizationInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupForms\CharityOrganizationInfo.Designer.cs">
+      <DependentUpon>CharityOrganizationInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils.cs" />
@@ -190,6 +215,9 @@
     <EmbeddedResource Include="Panels\CountDownPanel.resx">
       <DependentUpon>CountDownPanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Panels\LoadingPanel.resx">
+      <DependentUpon>LoadingPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Panels\SponsorRunner.resx">
       <DependentUpon>SponsorRunner.cs</DependentUpon>
     </EmbeddedResource>
@@ -198,6 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Panels\TitlePanel.resx">
       <DependentUpon>TitlePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupForms\CharityOrganizationInfo.resx">
+      <DependentUpon>CharityOrganizationInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -222,6 +253,53 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\CharitiesLogo\arise-logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\CharitiesLogo\aves-do-brazil-logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\CharitiesLogo\clara-santos-oliveira-institute-logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\CharitiesLogo\conquer-cancer-brazil.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\CharitiesLogo\diabetes-brazil-logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\CharitiesLogo\heart-health-sao-paulo-logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\CharitiesLogo\human-rights-centre-logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\CharitiesLogo\oxfam-international-logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\CharitiesLogo\querstadtein-logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\CharitiesLogo\save-the-children-fund-logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\CharitiesLogo\stay-pumped-logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\CharitiesLogo\the-red-cross-logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\CharitiesLogo\upbeat-logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\CharitiesLogo\wwsm-rescue-logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

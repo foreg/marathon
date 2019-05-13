@@ -9,6 +9,7 @@ namespace Marathon
     static class Program
     {
         public static PanelsManageer PanelsManageer { get; set; } = new PanelsManageer();
+        public static ApplicationContext db = new ApplicationContext();
 
         [STAThread]
         static void Main()

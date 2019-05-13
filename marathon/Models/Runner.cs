@@ -9,13 +9,14 @@ namespace Marathon.Models
     {
         [Key]
         [Required]
-        public string RunnerId { get; set; }
+        public int RunnerId { get; set; }
         [MaxLength(100)]
         [Required]
         public string Email { get; set; }
 
         [MaxLength(100)]
         [Required]
+        [Column("Gender")]
         public string GenderName { get; set; }
 
         public DateTime DateOfBirth { get; set; }
@@ -25,7 +26,8 @@ namespace Marathon.Models
         [Required]
         public string CountryCode { get; set; }
 
-
+        [ForeignKey("Email")]
+        public virtual User User { get; set; }
         [ForeignKey("GenderName")]
         public virtual Gender Gender { get; set; }
         [ForeignKey("CountryCode")]

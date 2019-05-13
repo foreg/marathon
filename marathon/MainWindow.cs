@@ -23,7 +23,7 @@ namespace Marathon
         {
             Program.PanelsManageer.InitTop(titlePanel1);
 
-            Program.PanelsManageer.InitCenter(startPanel1, sponsorRunner1);
+            Program.PanelsManageer.InitCenter(loadingPanel1, startPanel1, sponsorRunner1);
 
             Program.PanelsManageer.InitBottom(countDownPanel1);
         }
